@@ -19,15 +19,18 @@ export default function App(){
   }
 
 
-  function toggleTodo(id, completed) {
+  function toggleTodo(id) {
     setTodos(currentTodos => {
       return currentTodos.map(todo => {
         if (todo.id === id) {
-          return {...todo, completed}
+          return { ...todo, completed: !todo.completed };
+        } else {
+          return todo;
         }
-      })
-    })
+      });
+    });
   }
+  
   
   return (
     <>
@@ -45,24 +48,21 @@ export default function App(){
 
       <h1 className="header">To Do List :</h1>
       <ul className="list">
-          {todos.map(todo => {
-            return (
-            <li key={todo.id}>
-              <label htmlFor="">
-                <input
-                  type="checkbox"
-                  onChange={e => toggleTodo(todo.id, e.target.checked)}
-                  checked={todo.completed}
-                />
-                {todo.title}
-              </label>
-              <button className="btn btn-danger">Delete</button>
-            </li>
-          );
-          })}
+      {todos.map((todo, index) => (
+        <li key={index}>
+          <label>
+            <input
+              type="checkbox"
+              onChange={() => toggleTodo(todo.id)}
+              checked={todo.completed}
+            />
+            {todo.title}
+          </label>
+          <button className="btn btn-danger">Delete</button>
+        </li>
+      ))}
       </ul>
-
-      <p className="footer-text">Made By <a href="https://github.com/chrystalio"><u>Kristoff</u></a></p>
+      <h4 className="footer-text">Made By <a href="https://github.com/chrystalio"><u>Kristoff</u></a></h4>
     </>
   );
 }
