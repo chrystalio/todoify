@@ -48,7 +48,7 @@ export default function App(){
 
       <h1 className="header">To Do List :</h1>
       <ul className="list">
-      {todos.map((todo, index) => (
+      {/* {todos.map((todo, index) => (
         <li key={index}>
           <label>
             <input
@@ -60,7 +60,23 @@ export default function App(){
           </label>
           <button className="btn btn-danger">Delete</button>
         </li>
-      ))}
+      ))} */}
+
+      {todos.map((todo => {
+        return (
+          <li key={todo.id}>
+            <label>
+            <input
+              type="checkbox"
+              onChange={() => toggleTodo(todo.id)}
+              checked={todo.completed}
+            />
+            {todo.title}
+          </label>
+          <button className="btn btn-danger">Delete</button>
+          </li>
+        )
+      }))}
       </ul>
       <h4 className="footer-text">Made By <a href="https://github.com/chrystalio"><u>Kristoff</u></a></h4>
     </>
