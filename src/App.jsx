@@ -48,19 +48,6 @@ export default function App(){
 
       <h1 className="header">To Do List :</h1>
       <ul className="list">
-      {/* {todos.map((todo, index) => (
-        <li key={index}>
-          <label>
-            <input
-              type="checkbox"
-              onChange={() => toggleTodo(todo.id)}
-              checked={todo.completed}
-            />
-            {todo.title}
-          </label>
-          <button className="btn btn-danger">Delete</button>
-        </li>
-      ))} */}
 
       {todos.map((todo => {
         return (
