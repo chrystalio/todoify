@@ -138,3 +138,10 @@ body {
 .list li:has(input:checked) label:hover::before {
     background: hsl(200, 100%, 30%);
 }
+
+
+
+.text-center {
+    text-align: center;
+    padding: 0.9rem;
+}
