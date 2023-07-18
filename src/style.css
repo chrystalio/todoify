@@ -5,10 +5,14 @@
 
 body {
     background: #333;
-    color: hsl(200, 100%, 90%);
+    color: #6A8CAF;
     max-width: 400px;
     padding: 1rem;
     margin: 10rem auto;
+}
+
+.title {
+    color: #F9FBFC;
 }
 
 .new-item-form {
@@ -147,7 +151,7 @@ body {
 .footer-text {
     text-align: center;
     font-size: 0.8rem;
-    color: hsl(200, 100%, 70%);
+    color: #F9FBFC;
     margin-top: 10rem;
 }
 
